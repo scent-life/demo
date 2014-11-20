@@ -1,0 +1,30 @@
+<a href="/p4" class="nav back">&nbsp;</a>
+<a href="/p6" class="nav style-link">&nbsp;</a>
+<div class="mixer-link j-social">&nbsp;</div>
+<div class="popup">
+    <div class="btns">
+        <a href="#" class="anim-like"><img src="img/btn-like.png" /></a>
+        <a href="#" class="anim-test"><img src="img/btn-test.png" /></a>
+        <a href="/p7" class="anim-mix"><img src="img/btn-mix.png" /></a>
+    </div>
+    <div class="backdrop"></div>
+</div>
+<img src="./img/page5.png" class="full"/>
+<script>
+    require(['node'], function($){
+        setTimeout(function(){
+            var $popup = $('.popup'),
+                $social = $('.j-social'),
+                $backdrop = $('.backdrop');
+            $social.on('click', function(){
+                $popup.addClass('show');
+                window.navigationView.get('activeView').scrollTo( { top: 0 } );
+            });
+
+            $backdrop.on('click', function(){
+                $popup.removeClass('show');
+            });
+
+        }, 0);
+    });
+</script>

@@ -1,0 +1,87 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Scent</title>
+
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+
+    <link rel="shortcut icon" href="./img/favicon.ico">
+
+    <!-- iPad and iPad mini (with @2× display) iOS ≥ 8 -->
+    <link rel="apple-touch-icon-precomposed" sizes="180x180" href="img/scent icon.png">
+    <!-- iPad 3+ (with @2× display) iOS ≥ 7 -->
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="img/scent icon.png">
+    <!-- iPad (with @2× display) iOS ≤ 6 -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="img/scent icon.png">
+    <!-- iPhone (with @2× and @3 display) iOS ≥ 7 -->
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="img/scent icon.png">
+    <!-- iPhone (with @2× display) iOS ≤ 6 -->
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/scent icon.png">
+    <!-- iPad mini and the first- and second-generation iPad (@1× display) on iOS ≥ 7 -->
+    <link rel="apple-touch-icon-precomposed" sizes="76x76" href="img/scent icon.png">
+    <!-- iPad mini and the first- and second-generation iPad (@1× display) on iOS ≤ 6 -->
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/scent icon.png">
+    <!-- Android Stock Browser and non-Retina iPhone and iPod Touch -->
+    <link rel="apple-touch-icon-precomposed" href="img/scent icon.png">
+    <!-- Fallback for everything else -->
+    <link rel="shortcut icon" href="img/scent icon.png">
+
+    <link href="/kissy/css/base.css" rel="stylesheet" />
+    <link href="/kissy/navigation-view/assets/dpl.css" rel="stylesheet">
+    <link href="/kissy/scroll-view/assets/dpl.css" rel="stylesheet" />
+
+    <link href="/css/index.css" rel="stylesheet" />
+</head>
+
+<body>
+    <template id="p0">
+        {{include('./steps/p0.xtpl')}}
+    </template>
+
+    <template id="p1">
+        {{include('./steps/p1.xtpl')}}
+    </template>
+
+    <template id="p2">
+        {{include('./steps/p2.xtpl')}}
+    </template>
+
+    <template id="p3">
+        {{include('./steps/p3.xtpl')}}
+    </template>
+
+    <template id="p4">
+        {{include('./steps/p4.xtpl')}}
+    </template>
+
+    <template id="p5">
+        {{include('./steps/p5.xtpl')}}
+    </template>
+
+    <template id="p6">
+        {{include('./steps/p6.xtpl')}}
+    </template>
+
+    <template id="p7">
+        {{include('./steps/p7.xtpl')}}
+    </template>
+
+    <div class="preload-images">
+        <img src="/img/page0.png" width="1" height="1" />
+        <img src="/img/page1.png" width="1" height="1" />
+        <img src="/img/page2.png" width="1" height="1" />
+        <img src="/img/page3.png" width="1" height="1" />
+        <img src="/img/page4.png" width="1" height="1" />
+        <img src="/img/page5.png" width="1" height="1" />
+        <img src="/img/page6.png" width="1" height="1" />
+        <img src="/img/page7.png" width="1" height="1" />
+    </div>
+
+    <script src="/kissy/seed-debug.js"></script>
+    <script src="/js/index.js"></script>
+
+</body>
+
+</html>

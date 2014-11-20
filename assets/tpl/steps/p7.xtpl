@@ -1,0 +1,21 @@
+<a href="/p5" class="nav mix-wrapper">
+    <div class="mix">
+        <div class="b1"></div>
+        <div class="b2"></div>
+        <div class="b3"></div>
+        <div class="b4"></div>
+        <div class="b5"></div>
+    </div>
+    <div class="done"><img src="img/page7.png"></div>
+</a>
+
+<script>
+require(['node'], function($){
+    setTimeout(function(){
+        var $mix = $('.mix-wrapper');
+        setTimeout(function(){
+            $mix.addClass('end');
+        }, 3500);
+    }, 0);
+});
+</script>

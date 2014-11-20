@@ -1,0 +1,234 @@
+@import "./libs/lesshat.less";
+.mix {
+    width: 0%;
+    // height: 100%;
+    position: relative;
+    left: 50%;
+    margin-top: 50%;
+}
+
+@ballSize: 150px;
+@ballTextColor: #fff;
+@ballOpacity: 0.8;
+@ballAnimAppearSec: 0s;
+@ballAnimBeginSec: 2s;
+@ballAnimFinishSec: 10s;
+
+.b1, .b2, .b3, .b4, .b5 {
+    position: absolute;
+    text-align: center;
+    .calc(left, ~'100% - @{b1Size}/2');
+    .calc(top, ~'100% - @{b1Size}/2');
+}
+
+@b1Size: @ballSize*1;
+@b1Color: #a71a50;
+@b1TextColor: @ballTextColor;
+@b1AnimSec: 2s;
+@b1Opacity: @ballOpacity;
+.b1 {
+    .border-radius(@b1Size/2);
+    background: @b1Color;
+    width: @b1Size;
+    height: @b1Size;
+    line-height: @b1Size;
+    color: @b1TextColor;
+    .opacity(@b1Opacity);
+    margin: (@ballSize - @b1Size)/2 0 0 (@ballSize - @b1Size)/2;
+
+    // animation-name | animation-duration | animation-timing-function | animation-delay | animation-iteration-count | animation-direction | animation-fill-mode
+    // .animation(b1Anim @b1AnimSec linear alternate 0s 20);
+    .animation-name(b1Anim, ballFinish);
+    .animation-duration(@b1AnimSec, @ballAnimFinishSec);
+    .animation-timing-function(linear alternate);
+    .animation-delay(@ballAnimAppearSec/10, @ballAnimBeginSec);
+    .animation-iteration-count(1);
+    // .animation-direction();
+    // .animation-fill-mode();
+}
+
+@b2Size: @ballSize*1.1;
+@b2Color: #23cedd;
+@b2TextColor: @ballTextColor;
+@b2AnimSec: 1.3s;
+@b2Opacity: @ballOpacity;
+.b2 {
+    .border-radius(@b2Size/2);
+    background: @b2Color;
+    width: @b2Size;
+    height: @b2Size;
+    line-height: @b2Size;
+    color: @b2TextColor;
+    .opacity(@b2Opacity);
+    margin: (@ballSize - @b2Size)/2 0 0 (@ballSize - @b2Size)/2;
+
+    // .animation(b2Anim @b2AnimSec linear alternate 0s 1);
+    .animation-name(b2Anim, ballFinish);
+    .animation-duration(@b2AnimSec, @ballAnimFinishSec);
+    .animation-timing-function(linear alternate);
+    .animation-delay(@ballAnimAppearSec/10, @ballAnimBeginSec);
+    .animation-iteration-count(1);
+}
+
+@b3Size: @ballSize*0.9;
+@b3Color: #006a87;
+@b3TextColor: @ballTextColor;
+@b3AnimSec: 1.6s;
+@b3Opacity: @ballOpacity;
+.b3 {
+    .border-radius(@b3Size/2);
+    background: @b3Color;
+    width: @b3Size;
+    height: @b3Size;
+    line-height: @b3Size;
+    color: @b3TextColor;
+    .opacity(@b3Opacity);
+    margin: (@ballSize - @b3Size)/2 0 0 (@ballSize - @b3Size)/2;
+
+    // .animation(b3Anim @b3AnimSec linear alternate);
+    .animation-name(b3Anim, ballFinish);
+    .animation-duration(@b3AnimSec, @ballAnimFinishSec);
+    .animation-timing-function(linear alternate);
+    .animation-delay(@ballAnimAppearSec/10, @ballAnimBeginSec);
+    .animation-iteration-count(1);
+}
+
+@b4Size: @ballSize*0.8;
+@b4Color: #9fcd19;
+@b4TextColor: @ballTextColor;
+@b4AnimSec: 2.2s;
+@b4Opacity: @ballOpacity;
+.b4 {
+    .border-radius(@b4Size/2);
+    background: @b4Color;
+    width: @b4Size;
+    height: @b4Size;
+    line-height: @b4Size;
+    color: @b4TextColor;
+    .opacity(@b4Opacity);
+    margin: (@ballSize - @b4Size)/2 0 0 (@ballSize - @b4Size)/2;
+
+    // .animation(b4Anim @b4AnimSec linear alternate);
+    .animation-name(b4Anim, ballFinish);
+    .animation-duration(@b4AnimSec, @ballAnimFinishSec);
+    .animation-timing-function(linear alternate);
+    .animation-delay(@ballAnimAppearSec/10, @ballAnimBeginSec);
+    .animation-iteration-count(1);
+}
+
+@b5Size: @ballSize*0.4;
+@b5Color: #9cb602;
+@b5TextColor: @ballTextColor;
+@b5AnimSec: 2s;
+@b5Opacity: @ballOpacity;
+.b5 {
+    .border-radius(@b5Size/2);
+    background: @b5Color;
+    width: @b5Size;
+    height: @b5Size;
+    line-height: @b5Size;
+    color: @b5TextColor;
+    .opacity(@b5Opacity);
+    margin: (@ballSize - @b5Size)/2 0 0 (@ballSize - @b5Size)/2;
+
+    // .animation(b5Anim @b5AnimSec linear alternate);
+    .animation-name(b5Anim, animEnd);
+    .animation-duration(@b5AnimSec, 10s);
+    .animation-timing-function(linear alternate);
+    .animation-delay(@ballAnimAppearSec/10, 2s);
+    .animation-iteration-count(1);
+}
+
+/**
+ * ball 1 animation
+ */
+@b1Transform: @ballSize*1.2;
+.keyframes(~'b1Anim,from {transform: rotate(0deg) translate(-@{b1Transform}) rotate(0deg) scale(1);} to {transform: rotate(360deg) translate(0px) rotate(-360deg)  scale(0.1);}');
+
+
+/**
+ * ball 2 animation
+ */
+@b2Transform: @ballSize*1;
+.keyframes(~'b2Anim,from {transform: rotate(0deg) translate(-@{b2Transform}) rotate(0deg) scale(1);} to {transform: rotate(360deg) translate(0px) rotate(-360deg) scale(0.1);}');
+
+
+/**
+ * ball 3 animation
+ */
+@b3Transform: @ballSize*0.9;
+.keyframes(~'b3Anim,from {transform: rotate(0deg) translate(-@{b3Transform}) rotate(0deg) scale(1);} to {transform: rotate(-360deg) translate(0px) rotate(360deg) scale(0.1);}');
+
+
+/**
+ * ball 4 animation
+ */
+@b4Transform: @ballSize*1;
+.keyframes(~'b4Anim,from {transform: rotate(0deg) translate(-@{b4Transform}) rotate(0deg) scale(1);} to {transform: rotate(360deg) translate(0px) rotate(-360deg) scale(0.1);}');
+
+
+/**
+ * ball 5 animation
+ */
+@b5Transform: @ballSize*1.4;
+.keyframes(~'b5Anim,from {transform: rotate(0deg) translate(-@{b5Transform}) rotate(0deg);} to {transform: rotate(-360deg) translate(0px) rotate(-60deg);}');
+
+.keyframes(~'animEnd,0% {transform: scale(0); color: @{b5Color};} 5% {transform: scale(5); color: @{b5Color};} 8% {transform: scale(3); color: @{b5Color};} 50% {transform: scale(100); color: @{b5Color};}; 100% {transform: scale(100); color: @{b5Color};}');
+
+
+/**
+ * ball finish animation
+ */
+// @b5Transform: 80px;
+.keyframes(~'ballFinish,0% {transform: scale(1); opacity: @{ballOpacity};} 10% {transform: scale(0.1); opacity: 0.0;} 100% {transform: scale(0.1); opacity: 0.0;}');
+
+/**
+ * ball appear animation
+ */
+.keyframes(~'ballAppear,0% {translate(-100px); transform: scale(0.1); opacity: 0.0;} 100% {translate(-100px); transform: scale(1.0); opacity: @{ballOpacity};}');
+
+
+
+.done {
+    position: absolute;
+    background: @b5Color;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    // line-height: 100%;
+    // text-align: center;
+    z-index: 5;
+    display: none;
+    // color: #666;
+    // .opacity(0.0);
+
+    // .transform(scale(.5) translate(10, 20));
+    // .animation-name(donebegin);
+    // .animation-duration(10s);
+    // .animation-timing-function(linear alternate);
+    // .animation-delay(2.5s);
+    // .animation-iteration-count(1);
+    //
+    img {
+        width: 100%;
+    }
+}
+
+.mix-wrapper {
+    &.end {
+        .done {
+            display: initial;
+        }
+    }
+}
+
+/**
+ * ball finish animation
+ */
+.keyframes(~'donebegin,0% {opacity: 0.0;} 10% {opacity: 1.0; font-size: 20px} 100% {opacity: 1.0; font-size: 20px}');
+.keyframes(~'doneend,0% {transform: scale(1); opacity(0.0)} 100% {transform: scale(1); opacity(1.0)}');
+
+
+
+
